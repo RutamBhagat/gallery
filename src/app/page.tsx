@@ -1,24 +1,25 @@
-import Link from "next/link";
-import { db } from "~/server/db";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
+
+import Images from "~/components/images";
 
 export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
-  const mockImages = await db.query.images.findMany();
-
-  console.log("mockImages", mockImages);
-
   return (
     <main className="">
-      <div className="flex flex-wrap gap-4">
-        {mockImages.map((image) => (
-          <div key={image.key} className="w-48">
-            <Link href={`/image/${image.key}`}>
-              <img src={image.url} alt={image.name} />
-            </Link>
-          </div>
-        ))}
-      </div>
+      <SignedOut>
+        <div className="mx-auto flex min-h-dvh max-w-2xl flex-col justify-center text-center">
+          <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+            Unauthorized
+          </h1>
+          <p className="mt-3 text-xl text-muted-foreground">
+            Please sign in to view the gallery.
+          </p>
+        </div>
+      </SignedOut>
+      <SignedIn>
+        <Images />
+      </SignedIn>
     </main>
   );
 }

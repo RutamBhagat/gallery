@@ -6,9 +6,11 @@
 - [x] Scaffold basic ui with mock data
 - [x] Improve build process
 - [x] Set up a database (vercel postgres)
-- [] Attack database to UI
-- [] Add authentication (with clerk)
+- [x] Attach database to UI
+- [x] Add authentication (with clerk)
 - [] Add image upload
+- [] "taint" (server-only)
+- [] Use Next/Image component
 - [] Error management (with sentry)
 - [] Routing / Image page (parallel route)
 - [] Delete button (with server actions)
