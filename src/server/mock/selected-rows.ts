@@ -1,11 +1,13 @@
-export const mockImages = [
+import { images } from "../db/schema";
+
+export const mockImages: (typeof images.$inferInsert)[] = [
   {
     name: "56_steins-gate-makise-kurisu-anime-anime-girls-wallpaper-preview.jpg",
     key: "vLZb8KmTo0VKmlLxHIJcJQKB0UaLIV7PgsMFECbYvlo9Rtn1",
     customId: null,
     url: "https://utfs.io/f/vLZb8KmTo0VKmlLxHIJcJQKB0UaLIV7PgsMFECbYvlo9Rtn1",
     size: 54594,
-    uploadedAt: "2024-09-20T10:43:31.000Z",
+    uploadedAt: new Date("2024-09-20T10:43:31.000Z"),
   },
   {
     name: "8_steins-gate-steins-gate-hd-wallpaper-preview.jpg",
@@ -13,7 +15,7 @@ export const mockImages = [
     customId: null,
     url: "https://utfs.io/f/vLZb8KmTo0VKvCI8fwGmTo0VKb7XDAFt4ySaipCL5QmHkNEY",
     size: 87765,
-    uploadedAt: "2024-09-20T10:43:30.000Z",
+    uploadedAt: new Date("2024-09-20T10:43:30.000Z"),
   },
   {
     name: "19_anime-anime-girls-steins-gate-amane-suzuha-wallpaper-preview.jpg",
@@ -21,7 +23,7 @@ export const mockImages = [
     customId: null,
     url: "https://utfs.io/f/vLZb8KmTo0VKaeKizsK7eA0qaUY3rNWuFiQb1gLoPhSzGRV7",
     size: 77263,
-    uploadedAt: "2024-09-20T10:43:30.000Z",
+    uploadedAt: new Date("2024-09-20T10:43:30.000Z"),
   },
   {
     name: "17_steins-gate-wallpaper-preview.jpg",
@@ -29,7 +31,7 @@ export const mockImages = [
     customId: null,
     url: "https://utfs.io/f/vLZb8KmTo0VKp74OcTiwbnpX5OFrGge8fTBl0YPwmk6ycsUv",
     size: 24442,
-    uploadedAt: "2024-09-20T10:43:30.000Z",
+    uploadedAt: new Date("2024-09-20T10:43:30.000Z"),
   },
   {
     name: "58_el-psy-congroo-steins-gate-simple-gates-of-steiner-wallpaper-preview.jpg",
@@ -37,7 +39,7 @@ export const mockImages = [
     customId: null,
     url: "https://utfs.io/f/vLZb8KmTo0VKoHmwMtDUSbo2lG1qrKc0um7jidCv6IHezx3f",
     size: 19118,
-    uploadedAt: "2024-09-20T10:43:30.000Z",
+    uploadedAt: new Date("2024-09-20T10:43:30.000Z"),
   },
   {
     name: "61_steins-gate-okabe-rintarou-makise-kurisu-wallpaper-preview.jpg",
@@ -45,7 +47,7 @@ export const mockImages = [
     customId: null,
     url: "https://utfs.io/f/vLZb8KmTo0VKpe6OWjwbnpX5OFrGge8fTBl0YPwmk6ycsUvt",
     size: 116390,
-    uploadedAt: "2024-09-20T10:43:30.000Z",
+    uploadedAt: new Date("2024-09-20T10:43:30.000Z"),
   },
   {
     name: "80_steins-gate-amoled-dark-vertical-okabe-rintarou-hd-wallpaper-preview.jpg",
@@ -53,7 +55,7 @@ export const mockImages = [
     customId: null,
     url: "https://utfs.io/f/vLZb8KmTo0VKwAVIpCaQqM8fmX4yuAWPes6i3GwYcZCvDU2F",
     size: 107982,
-    uploadedAt: "2024-09-20T10:43:30.000Z",
+    uploadedAt: new Date("2024-09-20T10:43:30.000Z"),
   },
   {
     name: "48_anime-steins-gate-makise-kurisu-anime-girls-wallpaper-preview.jpg",
@@ -61,7 +63,7 @@ export const mockImages = [
     customId: null,
     url: "https://utfs.io/f/vLZb8KmTo0VKZ2ExbWc7npTzvycmHKtVb23dEMge6fDY0hqS",
     size: 71363,
-    uploadedAt: "2024-09-20T10:43:30.000Z",
+    uploadedAt: new Date("2024-09-20T10:43:30.000Z"),
   },
   {
     name: "62_steins-gate-wallpaper-preview.jpg",
@@ -69,7 +71,7 @@ export const mockImages = [
     customId: null,
     url: "https://utfs.io/f/vLZb8KmTo0VKUlvTjb0xbdnqYuiC8PkKgF3w7BGX2DolNZV0",
     size: 42163,
-    uploadedAt: "2024-09-20T10:43:30.000Z",
+    uploadedAt: new Date("2024-09-20T10:43:30.000Z"),
   },
   {
     name: "77_steins-gate-wallpaper-preview.jpg",
@@ -77,6 +79,6 @@ export const mockImages = [
     customId: null,
     url: "https://utfs.io/f/vLZb8KmTo0VKa6ZnPA7eA0qaUY3rNWuFiQb1gLoPhSzGRV7s",
     size: 44181,
-    uploadedAt: "2024-09-20T10:43:30.000Z",
+    uploadedAt: new Date("2024-09-20T10:43:30.000Z"),
   },
 ];
