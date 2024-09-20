@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { mockImages } from "~/server/mock/selected-rows";
 
+export const dynamic = "force-dynamic";
+
 export default function HomePage() {
   return (
     <main className="">
