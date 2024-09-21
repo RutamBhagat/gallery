@@ -1,11 +1,9 @@
 import Link from "next/link";
 import React from "react";
-import { db } from "~/server/db";
+import { getMyImages } from "~/server/queries/images";
 
 async function Images() {
-  const images = await db.query.images.findMany({
-    orderBy: (model, { desc }) => desc(model.uploadedAt),
-  });
+  const images = await getMyImages();
 
   return (
     <div className="flex flex-wrap gap-4">
