@@ -7,7 +7,6 @@ async function Images() {
     orderBy: (model, { desc }) => desc(model.uploadedAt),
   });
 
-  console.log("images", images);
   return (
     <div className="flex flex-wrap gap-4">
       {images.map((image) => (
