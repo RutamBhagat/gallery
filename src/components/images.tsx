@@ -1,5 +1,5 @@
 import React from "react";
-import ResponsiveMasonryGrid from "./responsiveMasonry";
+import ResponsiveMasonryGrid from "./responsive_masonry";
 import { getMyImages } from "~/server/queries/images";
 
 async function Images() {
