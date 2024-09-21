@@ -1,6 +1,6 @@
 import { db } from "../db";
 import { images } from "../db/schema";
-import { mockImages } from "../mock/selected-rows";
+import { mockImages } from "../mock/mockImages";
 
 const main = async () => {
   console.log("Seed start");

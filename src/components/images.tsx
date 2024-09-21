@@ -3,22 +3,20 @@ import React from "react";
 import { db } from "~/server/db";
 
 async function Images() {
-  const mockImages = await db.query.images.findMany({
+  const images = await db.query.images.findMany({
     orderBy: (model, { desc }) => desc(model.uploadedAt),
   });
 
-  console.log("mockImages", mockImages);
+  console.log("images", images);
   return (
     <div className="flex flex-wrap gap-4">
-      {[...mockImages, ...mockImages, ...mockImages, ...mockImages].map(
-        (image) => (
-          <div key={image.key} className="w-48">
-            <Link href={`/image/${image.key}`}>
-              <img src={image.url} alt={image.name} />
-            </Link>
-          </div>
-        ),
-      )}
+      {images.map((image) => (
+        <div key={image.key} className="w-48">
+          <Link href={`/image/${image.key}`}>
+            <img src={image.url} alt={image.name} />
+          </Link>
+        </div>
+      ))}
     </div>
   );
 }
