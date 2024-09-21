@@ -3,10 +3,10 @@
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 import Image from "next/image";
-import { images } from "~/server/db/schema";
+import { TImagesSelect } from "~/server/db/schema";
 
 type Props = {
-  imageArray: (typeof images.$inferInsert)[];
+  imageArray: TImagesSelect[];
 };
 
 function ResponsiveMasonryGrid({ imageArray }: Props) {

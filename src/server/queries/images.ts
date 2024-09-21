@@ -1,10 +1,10 @@
 import "server-only";
 
+import { TImagesSelect } from "../db/schema";
 import { auth } from "@clerk/nextjs/server";
 import { db } from "../db";
-import { images } from "../db/schema";
 
-export async function getMyImages(): Promise<(typeof images.$inferInsert)[]> {
+export async function getMyImages(): Promise<TImagesSelect[]> {
   const user = auth();
 
   if (!user.userId) throw new Error("Unauthorized");

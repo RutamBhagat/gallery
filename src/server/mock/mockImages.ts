@@ -1,6 +1,6 @@
-import { images } from "../db/schema";
+import { TImagesInsert } from "../db/schema";
 
-export const mockImages: (typeof images.$inferInsert)[] = [
+export const mockImages: TImagesInsert[] = [
   {
     name: "knight_mordred_in_combat_by_canpon1992x_dg1yt9s.png",
     key: "vLZb8KmTo0VK2aN9l2gu54DIm2xCfwQh3SN7HWlsrLOgkEKV",
