@@ -6,9 +6,8 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
-import { Download, Share2 } from "lucide-react";
 
-import { Button } from "./ui/button";
+import ClientActions from "./client_actions";
 import Image from "next/image";
 import React from "react";
 import { clerkClient } from "@clerk/nextjs/server";
@@ -65,15 +64,7 @@ async function FullImage({ id }: Props) {
                 </p>
               </div>
             </div>
-
-            <div className="space-y-2">
-              <Button className="w-full" variant="outline">
-                <Download className="mr-2 h-4 w-4" /> Download
-              </Button>
-              <Button className="w-full" variant="outline">
-                <Share2 className="mr-2 h-4 w-4" /> Share
-              </Button>
-            </div>
+            <ClientActions image={image} />
           </CardContent>
         </Card>
       </div>
