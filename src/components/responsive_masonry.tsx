@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import Image from "next/image";
+import Link from "next/link";
 import { SkeletonCard } from "./skeleton_card";
 import { TImagesSelect } from "~/server/db/schema";
 import dynamic from "next/dynamic";
@@ -51,14 +52,15 @@ const renderContent = ({
   }
 
   return imageArray.map((image) => (
-    <Image
-      key={image.key}
-      src={image.url}
-      alt={image.name}
-      width={400}
-      height={400}
-      style={{ objectFit: "contain" }}
-    />
+    <Link key={image.key} href={`/img/${image.id}`}>
+      <Image
+        src={image.url}
+        alt={image.name}
+        width={400}
+        height={400}
+        style={{ objectFit: "contain" }}
+      />
+    </Link>
   ));
 };
 
