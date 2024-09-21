@@ -2,8 +2,9 @@ import "server-only";
 
 import { auth } from "@clerk/nextjs/server";
 import { db } from "../db";
+import { images } from "../db/schema";
 
-export async function getMyImages() {
+export async function getMyImages(): Promise<(typeof images.$inferInsert)[]> {
   const user = auth();
 
   if (!user.userId) throw new Error("Unauthorized");
