@@ -3,6 +3,7 @@
 ## TODO
 
 - [x] Deploy to Vercel
+- [x] Add ShadCN
 - [x] Scaffold basic ui with mock data
 - [x] Improve build process
 - [x] Set up a database (vercel postgres)

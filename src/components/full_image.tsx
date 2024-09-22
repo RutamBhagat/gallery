@@ -22,7 +22,7 @@ async function FullImage({ id }: Props) {
   if (isNaN(idAsNumber)) throw new Error("Invalid photo id");
 
   const image = await getImage(idAsNumber);
-  const uploaderInfo = await clerkClient.users.getUser(image.userId!);
+  const uploaderInfo = await clerkClient().users.getUser(image.userId!);
 
   return (
     <div className="mx-auto flex max-w-7xl flex-col gap-8 p-6 lg:flex-row">
@@ -56,7 +56,7 @@ async function FullImage({ id }: Props) {
                 </AvatarFallback>
               </Avatar>
               <div>
-                <p className="font-medium">
+                <p className="text-xl font-medium">
                   {uploaderInfo.firstName} {uploaderInfo.lastName}
                 </p>
                 <p className="text-sm text-muted-foreground">

@@ -66,7 +66,7 @@ function ClientActions({ image }: Props) {
         onClick={handleDownload}
         disabled={loading}
       >
-        {loading ? (
+        {loading ? (  
           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
         ) : (
           <Download className="mr-2 h-4 w-4" />
