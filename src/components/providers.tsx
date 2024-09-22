@@ -1,3 +1,4 @@
+import { CSPostHogProvider } from "~/app/_analytics/provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
@@ -15,7 +16,9 @@ function Providers({ children }: { children: React.ReactNode }) {
          */
         routerConfig={extractRouterConfig(ourFileRouter)}
       />
-      <ClerkProvider>{children}</ClerkProvider>
+      <ClerkProvider>
+        <CSPostHogProvider>{children}</CSPostHogProvider>
+      </ClerkProvider>
     </>
   );
 }

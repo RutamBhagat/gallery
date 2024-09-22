@@ -40,7 +40,7 @@ async function FullImage({ id }: Props) {
         </Card>
       </div>
 
-      <div className="w-full lg:w-1/3">
+      <div className="w-full min-w-96 lg:w-1/3">
         <Card>
           <CardHeader>
             <CardTitle className="text-2xl font-bold">{image.name}</CardTitle>
