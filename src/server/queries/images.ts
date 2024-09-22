@@ -3,6 +3,7 @@ import "server-only";
 import { TImagesSelect, images } from "../db/schema";
 import { and, eq } from "drizzle-orm";
 
+import analyticsServerClient from "../analytics/posthog_analytics";
 import { auth } from "@clerk/nextjs/server";
 import { db } from "../db";
 import { redirect } from "next/navigation";
@@ -40,6 +41,14 @@ export async function deleteImage(id: number): Promise<void> {
   await db
     .delete(images)
     .where(and(eq(images.id, id), eq(images.userId, user.userId)));
+
+  analyticsServerClient.capture({
+    distinctId: user.userId,
+    event: "delete_image",
+    properties: {
+      imageId: id,
+    },
+  });
 
   revalidatePath("/");
   redirect("/");
