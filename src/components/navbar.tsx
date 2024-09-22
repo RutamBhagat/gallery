@@ -11,13 +11,7 @@ import { Button } from "~/components/ui/button";
 import Link from "next/link";
 import { SimpleUploadButton } from "./simple_upload_button";
 
-const links = [
-  { href: "/", label: "Gallery" },
-  { href: "#", label: "Home" },
-  { href: "#", label: "About" },
-  { href: "#", label: "Services" },
-  { href: "#", label: "Contact" },
-];
+const links = [{ href: "/", label: "Gallery" }];
 
 export function Navbar() {
   return (

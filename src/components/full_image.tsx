@@ -7,8 +7,8 @@ import {
   CardTitle,
 } from "./ui/card";
 
-import ClientActions from "./client_actions";
 import Image from "next/image";
+import ImageClientActions from "./image_client_actions";
 import React from "react";
 import { clerkClient } from "@clerk/nextjs/server";
 import { getImage } from "~/server/queries/images";
@@ -22,6 +22,7 @@ async function FullImage({ id }: Props) {
   if (isNaN(idAsNumber)) throw new Error("Invalid photo id");
 
   const image = await getImage(idAsNumber);
+  if (!image) return null;
   const uploaderInfo = await clerkClient().users.getUser(image.userId!);
 
   return (
@@ -64,7 +65,7 @@ async function FullImage({ id }: Props) {
                 </p>
               </div>
             </div>
-            <ClientActions image={image} />
+            <ImageClientActions image={image} />
           </CardContent>
         </Card>
       </div>
