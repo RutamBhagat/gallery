@@ -4,11 +4,14 @@ import { Loader2, Upload } from "lucide-react"; // Importing icons from lucide-r
 
 import { cn } from "~/lib/utils";
 import { toast } from "sonner";
+import { usePostHog } from "posthog-js/react";
 import { useRouter } from "next/navigation";
 import { useUploadThing } from "~/lib/uploadthing";
 
 // inferred input off useUploadThing
 type Input = Parameters<typeof useUploadThing>;
+
+let loadingToastId: string | number;
 
 const useUploadThingInputProps = (...args: Input) => {
   const $ut = useUploadThing(...args);
@@ -17,7 +20,7 @@ const useUploadThingInputProps = (...args: Input) => {
     if (!e.target.files) return;
 
     const selectedFiles = Array.from(e.target.files);
-    const loadingToastId = toast(
+    loadingToastId = toast(
       <div className="flex items-center">
         <Loader2 className="mr-2 animate-spin" />
         <span>Uploading...</span>
@@ -67,10 +70,14 @@ const useUploadThingInputProps = (...args: Input) => {
 
 export function SimpleUploadButton({ className }: { className?: string }) {
   const router = useRouter();
+  const posthog = usePostHog();
 
   const { inputProps, isUploading } = useUploadThingInputProps(
     "imageUploader",
     {
+      onUploadBegin() {
+        posthog.capture(`${loadingToastId}`);
+      },
       onClientUploadComplete() {
         router.refresh();
       },
