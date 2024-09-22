@@ -2,7 +2,7 @@
 
 Hey there! Welcome to my Gallery App project. This is a Next.js-based image gallery application that I built to showcase my skills in modern web development. Let me walk you through what I did and how you can get it up and running.
 
-![Gallery App Screenshot](https://via.placeholder.com/1200x650.png?text=Gallery+App+Screenshot)
+![Gallery App Screenshot](https://github.com/user-attachments/assets/6a54eb29-01dd-4124-938e-db081f23080f)
 
 **Live Demo:** [https://gallery-omega-eight.vercel.app/](https://gallery-omega-eight.vercel.app/)
 
