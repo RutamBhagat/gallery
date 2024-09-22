@@ -78,6 +78,18 @@ export function SimpleUploadButton({ className }: { className?: string }) {
       onUploadBegin() {
         posthog.capture(`${loadingToastId}`);
       },
+      onUploadError(error) {
+        posthog.capture("upload_error", { error });
+        toast.error("Upload failed!", {
+          id: loadingToastId,
+          description:
+            "There was an error uploading your files. Please try again.",
+          action: {
+            label: "Retry",
+            onClick: () => console.log("Retry upload"),
+          },
+        });
+      },
       onClientUploadComplete() {
         router.refresh();
       },
